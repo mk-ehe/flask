@@ -1,0 +1,13 @@
+.form-control {
+    width: 60%;
+    margin: auto;
+}
+
+.label{
+    margin-top: .8rem;
+    margin-bottom: .2rem;
+}
+
+.btn-primary{
+    margin-top: 0.5rem;
+}

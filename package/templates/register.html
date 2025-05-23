@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block bs_ow_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_register_login.css') }}">
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            
+            <br>
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Create your Account
+            </h1>
+
+            {{ form.username.label(class="label") }}
+            {{ form.username(class="form-control", placeholder="Username") }}
+
+            {{ form.email.label(class="label") }}
+            {{ form.email(class="form-control", placeholder="yossa.studio@gmail.com") }}
+
+            {{ form.password.label(class="label") }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+
+            {{ form.confirm_password.label(class="label") }}
+            {{ form.confirm_password(class="form-control", placeholder="Confirm Password") }}
+
+            <br>
+
+            <div class="checkbox mb-3">
+               <h6>Already have an account?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Login</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-primary", style="background-color: sky-blue;") }}     <!-- style="background-color: sky-blue;" - nadpisywanie css'a bootstrapa -->
+            
+        </form>
+    </div>
+</body>
+{% endblock %}

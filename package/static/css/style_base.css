@@ -1,0 +1,84 @@
+.username{
+    background: linear-gradient(to right, white,white, lime, lime, white, white);
+    background-size: 200% auto;
+    background-position: 0%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: nazwa 6s linear infinite forwards;
+    position: relative;
+}
+
+@keyframes nazwa{
+    from { background-position: 200%; }
+    to { background-position: 0%; }
+}
+
+.logout:hover{    
+    color: red;
+    transition: color .3s ease-in;
+}
+
+.no-color-on-hover{
+    color: #FFFFFF80;
+}
+
+.alert {
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 11px 12px 12px 12px;
+    margin: 0;
+}
+
+.nav-on-active {
+    background: #343a40 !important;
+    color: white !important;  
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+}   
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.nav-on-active::after, .nav-on-active::before{
+    content: '';
+    position: absolute;
+    height: 115%;
+    width: 108%;
+    background-image: conic-gradient(from var(--angle), transparent,transparent, lime,transparent,transparent,transparent, lime, transparent, transparent);
+    top: 50%;
+    left: 50%;
+    translate: -50.4% -50%;
+    z-index: -1;
+    border-radius: 12px;
+    animation: 4s spin linear infinite;
+}
+
+.nav-on-active::before{
+    filter: blur(.5rem);
+    opacity: .5;
+}
+
+@keyframes spin{
+    from{
+        --angle:0deg;   
+    }
+    to{
+        --angle:360deg; 
+    }
+}
+
+.nav-link{
+    padding: 0 0.3rem 0 0.3rem;
+}
+
+.navbar{
+    z-index: 999;
+}

@@ -19,7 +19,6 @@ def about_page():
 @login_required
 def market_page():
     items = Item.query.all()
-    
     return render_template("market.html", items=items)
 
 

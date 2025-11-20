@@ -22,7 +22,7 @@ class User(database.Model, UserMixin):
         unique = True,
         nullable = False)
     
-    password_hashed = mapped_column(String(40),
+    password_hashed = mapped_column(String(120),
         nullable = False)
     
     budget = mapped_column(Integer,
